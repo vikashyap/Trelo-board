@@ -23,7 +23,10 @@ export interface BoardContextType {
 export type BoardAction =
   | { type: "ADD_COLUMN"; payload: Column }
   | { type: "EDIT_COLUMN"; payload: Column }
-  | { type: "DELETE_COLUMN"; payload: number };
+  | { type: "DELETE_COLUMN"; payload: number }
+  | { type: "ADD_CARD"; payload: Card }
+  | { type: "EDIT_CARD"; payload: Card }
+  | { type: "DELETE_CARD"; payload: number };
 
 export type ExcludedActionTypes = Exclude<BoardAction["type"], "ADD_COLUMN">;
 

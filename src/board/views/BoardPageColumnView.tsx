@@ -3,6 +3,7 @@ import { Input } from "../../components/Input/Input";
 import StyledH2 from "../../components/StyledComponents/StyledH2";
 import { useBoardContext } from "../BoardContextProvider";
 import { Card } from "../types/Board";
+import { BoardPageColumnAddCardView } from "./BoardPageColumnAddCardView";
 import { BoardPageColumnCardActionsView } from "./BoardPageColumnCardActionsView";
 
 export const BoardPageColumnView: FC = () => {
@@ -62,6 +63,8 @@ export const BoardPageColumnView: FC = () => {
               />
             </div>
           </div>
+          <BoardPageColumnAddCardView columnId={column.id} />
+          {JSON.stringify(state.cards)}
         </div>
       ))}
     </div>
