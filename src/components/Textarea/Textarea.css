@@ -1,0 +1,13 @@
+.board-textarea {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    resize: vertical; /* Allow vertical resizing */
+    transition: border-color 0.3s ease-in-out;
+  }
+
+  .board-textarea:focus {
+    outline: none;
+    border-color: #007bff;
+  }

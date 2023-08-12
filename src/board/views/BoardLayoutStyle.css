@@ -101,3 +101,41 @@
   color:#007bff;
   font-weight: bold;
 }
+.card {
+  background-color: #ece5e5;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-height: 120px;
+}
+.card-heading{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 30px;
+}
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
+}
+.card:hover .card-action-container {
+  display: flex;
+  opacity: 1;
+}
+.card-action-container {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  transition: opacity 0.2s;
+  border: #c7c4c4 1px solid;
+  border-radius: 4px;
+  width: max-content;
+  padding: 2px;
+  gap: 5px;
+}

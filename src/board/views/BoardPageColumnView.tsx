@@ -5,6 +5,7 @@ import { useBoardContext } from "../BoardContextProvider";
 import { Card } from "../types/Board";
 import { BoardPageColumnAddCardView } from "./BoardPageColumnAddCardView";
 import { BoardPageColumnCardActionsView } from "./BoardPageColumnCardActionsView";
+import { BoardPageColumnCardView } from "./BoardPageColumnCardView";
 
 export const BoardPageColumnView: FC = () => {
   const { state, dispatch } = useBoardContext();
@@ -63,8 +64,8 @@ export const BoardPageColumnView: FC = () => {
               />
             </div>
           </div>
+          <BoardPageColumnCardView columnId={column.id} />
           <BoardPageColumnAddCardView columnId={column.id} />
-          {JSON.stringify(state.cards)}
         </div>
       ))}
     </div>
