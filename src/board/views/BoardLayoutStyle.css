@@ -60,3 +60,24 @@
     padding-bottom: 5px;
     margin-bottom: 5px;
   }
+  .button-container{
+    display: flex;
+    gap: 5px;
+  }
+  .action-button{
+    background-color: #fafafa;
+    color: #c7c4c4;
+    border: none;
+    border-radius: 4px;
+    padding: 2px;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: center;
+    user-select: none;
+    transition: background-color 0.3s ease;
+  }
+  .action-button:hover{
+    background-color: #e2e5e7;
+    color:#007bff;
+    font-weight: bold;
+  }

@@ -20,4 +20,25 @@ export interface BoardContextType {
   dispatch: React.Dispatch<any>;
 }
 
-export type BoardAction = { type: "ADD_COLUMN"; payload: Column };
+export type BoardAction =
+  | { type: "ADD_COLUMN"; payload: Column }
+  | { type: "EDIT_COLUMN"; payload: Column }
+  | { type: "DELETE_COLUMN"; payload: number };
+
+export type ExcludedActionTypes = Exclude<BoardAction["type"], "ADD_COLUMN">;
+
+export type ExcludedDeleteActions = Exclude<
+  ExcludedActionTypes,
+  "DELETE_COLUMN"
+>;
+
+export type ExcludedEditAction = Exclude<ExcludedActionTypes, "EDIT_COLUMN">;
+
+export type BoardEditAction = Extract<
+  BoardAction,
+  { type: ExcludedDeleteActions }
+>;
+export type BoardDeleteAction = Extract<
+  BoardAction,
+  { type: ExcludedEditAction }
+>;

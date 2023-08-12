@@ -1,0 +1,10 @@
+.board-input {
+    border: none;
+    outline: none;
+    font-size: inherit;
+    padding: 0;
+    background-color: transparent;
+    width: 100%;
+    transition: border-color 0.2s ease-in-out;
+    border-bottom: 2px solid transparent; /* Initially hide the border */
+  }
