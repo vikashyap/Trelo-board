@@ -16,6 +16,8 @@ export interface BoardState {
 }
 
 export interface BoardContextType {
-  columns: Column[];
-  cards: Card[];
+  state: BoardState;
+  dispatch: React.Dispatch<any>;
 }
+
+export type BoardAction = { type: "ADD_COLUMN"; payload: Column };

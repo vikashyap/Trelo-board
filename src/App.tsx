@@ -1,10 +1,14 @@
 import { FC } from "react";
 import { BoardProvider } from "./board/BoardContextProvider";
+import { BoardLayout } from "./board/views/BoardLayout";
+import { AppLayout } from "./components/AppLayout/AppLayout";
 
 const App: FC = () => {
   return (
     <BoardProvider>
-      <main>coming soon</main>
+      <AppLayout>
+        <BoardLayout />
+      </AppLayout>
     </BoardProvider>
   );
 };

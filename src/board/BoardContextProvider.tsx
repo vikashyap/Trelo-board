@@ -1,5 +1,13 @@
-import { FC, ReactNode, createContext, useContext } from "react";
-import { BoardContextType, BoardState } from "./types/Board";
+import {
+  FC,
+  ReactNode,
+  Reducer,
+  createContext,
+  useContext,
+  useReducer,
+} from "react";
+import reducer from "./reducer/BoardReducer";
+import { BoardAction, BoardContextType, BoardState } from "./types/Board";
 
 const initialState: BoardState = {
   columns: [],
@@ -9,8 +17,13 @@ const initialState: BoardState = {
 const BoardContext = createContext<BoardContextType | undefined>(undefined);
 
 export const BoardProvider: FC<{ children: ReactNode }> = ({ children }) => {
+  const [state, dispatch] = useReducer<Reducer<BoardState, BoardAction>>(
+    reducer,
+    initialState
+  );
+
   return (
-    <BoardContext.Provider value={initialState}>
+    <BoardContext.Provider value={{ state, dispatch }}>
       {children}
     </BoardContext.Provider>
   );
