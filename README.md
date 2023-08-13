@@ -6,6 +6,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+### `npm install`
+
 ### `npm start`
 
 Runs the app in the development mode.\
@@ -36,4 +38,4 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 ## Learn More
 
-video file is added to demonstrate the working implementation of the board, for this the library used is react-player, other then that no libraries are used in the project.
+Video file is added to demonstrate the working implementation of the board, for this the library used is react-player, other then that no libraries are used in the project.
