@@ -3,6 +3,7 @@ import { Input } from "../../components/Input/Input";
 import StyledH2 from "../../components/StyledComponents/StyledH2";
 import { useBoardContext } from "../hooks/useBoardContext";
 import { Card } from "../types/Board";
+import { BoardLayoutLocalVideoDemo } from "./BoardLayoutLocalVideoDemo";
 import { BoardPageColumnAddCardView } from "./BoardPageColumnAddCardView";
 import { BoardPageColumnCardActionsView } from "./BoardPageColumnCardActionsView";
 import { BoardPageColumnCardView } from "./BoardPageColumnCardView";
@@ -14,6 +15,10 @@ export const BoardPageColumnView: FC = () => {
   }>({});
 
   const columns = useMemo(() => state.columns, [state.columns]);
+
+  if (!columns.length) {
+    return <BoardLayoutLocalVideoDemo />;
+  }
 
   return (
     <div className="board-columns-container">
