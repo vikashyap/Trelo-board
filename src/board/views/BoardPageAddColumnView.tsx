@@ -1,5 +1,5 @@
 import { FC, useState } from "react";
-import { useBoardContext } from "../BoardContextProvider";
+import { useBoardContext } from "../hooks/useBoardContext";
 import { Column } from "../types/Board";
 
 export const BoardPageAddColumnView: FC = () => {

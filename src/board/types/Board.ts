@@ -26,16 +26,22 @@ export type BoardAction =
   | { type: "DELETE_COLUMN"; payload: number }
   | { type: "ADD_CARD"; payload: Card }
   | { type: "EDIT_CARD"; payload: Card }
-  | { type: "DELETE_CARD"; payload: number };
+  | { type: "DELETE_CARD"; payload: number }
+  | { type: "MOVE_CARD"; payload: { cardId: number; newColumnId: number } };
 
-export type ExcludedActionTypes = Exclude<BoardAction["type"], "ADD_COLUMN">;
-
+export type ExcludedActionTypes = Exclude<
+  BoardAction["type"],
+  "ADD_CARD" | "MOVE_CARD" | "ADD_COLUMN"
+>;
 export type ExcludedDeleteActions = Exclude<
   ExcludedActionTypes,
-  "DELETE_COLUMN"
+  "DELETE_CARD" | "DELETE_COLUMN"
 >;
 
-export type ExcludedEditAction = Exclude<ExcludedActionTypes, "EDIT_COLUMN">;
+export type ExcludedEditAction = Exclude<
+  ExcludedActionTypes,
+  "EDIT_CARD" | "EDIT_COLUMN"
+>;
 
 export type BoardEditAction = Extract<
   BoardAction,

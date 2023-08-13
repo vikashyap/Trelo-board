@@ -41,6 +41,15 @@ const reducer = (state: BoardState, action: BoardAction): BoardState => {
         ...state,
         cards: updatedCards,
       };
+    case "MOVE_CARD":
+      return {
+        ...state,
+        cards: state.cards.map((card) =>
+          card.id === action.payload.cardId
+            ? { ...card, columnId: action.payload.newColumnId }
+            : card
+        ),
+      };
     default:
       return state;
   }

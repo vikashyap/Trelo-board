@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction, useCallback } from "react";
-import { useBoardContext } from "../BoardContextProvider";
+import { useBoardContext } from "../hooks/useBoardContext";
 import { BoardDeleteAction, BoardEditAction } from "../types/Board";
 
 interface Props<EditingData> {

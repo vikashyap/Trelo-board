@@ -1,8 +1,9 @@
-import { FC, useMemo, useState } from "react";
+import { FC, useCallback, useMemo, useState } from "react";
 import { Input } from "../../components/Input/Input";
 import StyledH2 from "../../components/StyledComponents/StyledH2";
 import { Textarea } from "../../components/Textarea/Textarea";
-import { useBoardContext } from "../BoardContextProvider";
+import { useBoardContext } from "../hooks/useBoardContext";
+import { Card } from "../types/Board";
 import { BoardPageColumnCardActionsView } from "./BoardPageColumnCardActionsView";
 
 interface Props {
@@ -23,10 +24,24 @@ export const BoardPageColumnCardView: FC<Props> = ({ columnId }) => {
     [columnId, state.cards]
   );
 
+  const handleDragStart = useCallback(
+    (e: React.DragEvent<HTMLDivElement>, card: Card) => {
+      e.dataTransfer.effectAllowed = "move";
+      e.dataTransfer.setData("card", JSON.stringify(card));
+    },
+    []
+  );
+
   return (
     <div className="card-box">
       {cards.map((card) => (
-        <div key={card.id} className="card">
+        <div
+          key={card.id}
+          className="card"
+          draggable
+          onDragStart={(e) => handleDragStart(e, card)}
+          onDragEnter={(e) => handleDragStart(e, card)}
+        >
           <div className="card-heading">
             {editingCards[card.id] === undefined ? (
               <StyledH2>{card.title}</StyledH2>

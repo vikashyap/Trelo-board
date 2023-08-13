@@ -1,7 +1,7 @@
 import { FC, useMemo, useState } from "react";
 import { Input } from "../../components/Input/Input";
 import StyledH2 from "../../components/StyledComponents/StyledH2";
-import { useBoardContext } from "../BoardContextProvider";
+import { useBoardContext } from "../hooks/useBoardContext";
 import { Card } from "../types/Board";
 import { BoardPageColumnAddCardView } from "./BoardPageColumnAddCardView";
 import { BoardPageColumnCardActionsView } from "./BoardPageColumnCardActionsView";

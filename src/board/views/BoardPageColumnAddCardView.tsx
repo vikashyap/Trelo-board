@@ -1,5 +1,5 @@
 import { FC, useCallback } from "react";
-import { useBoardContext } from "../BoardContextProvider";
+import { useBoardContext } from "../hooks/useBoardContext";
 import { Card } from "../types/Board";
 
 interface Props {
